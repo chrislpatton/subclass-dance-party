@@ -3,7 +3,12 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background: url('./images/Dance Floor.jpg')no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+ 
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -14,14 +19,93 @@ body, a:link, a:visited, a:active{
   float:right;
 }
 .topbar{
-  height:32px;
+  height:52px;
   background-color: #555;
 }
 .title{
   background-color: #777;
+  
 }
 .dancer{
-  border:10px solid red;
+  cursor:pointer;
+  border:10px solid #FF1493;
   border-radius:10px;
   position:absolute;
+  -webkit-transition-duration: 2s; 
+  -webkit-transition-timing-function: ease-in-out;
+   border-radius: 100%;
+  overflow: hidden;
+
+/*incorporating smoother transitions*/
+}
+
+.lights{
+  width: 0;
+  height: 0;
+  border: 40px solid yellow;
+  border-bottom: 20px solid #FF1493;
+  position: relative;
+  /*top: -80px;*/
+}
+
+.lightsWhite{
+  width: 0;
+  height: 0;
+  border: 40px solid #7CFC00;
+  border-bottom: 20px solid yellow;
+  position: relative;
+  /*top: -80px;*/
+}
+
+.lightsGreen{
+  width: 0;
+  height: 0;
+  border: 40px solid #FF1493;
+  border-bottom: 20px solid #7CFC00;
+  position: relative;
+  /*top: -80px;*/
+}
+
+.extra{
+  border:10px solid yellow;
+}
+
+
+.bouncy{
+  border:10px dotted white;
+}
+
+
+span.circle {
+    position: relative;
+    width: 0px;
+    height: 0px;
+    top: 50px;
+    left: 50px;
+    -webkit-transition-duration: 2s;
+    -webkit-transition-property: all;
+    -webkit-transition-timing-function: ease-in-out;
+    text-align: center;
+    background: red;
+    color: white;
+    border-radius: 100%;
+    padding: 20px;
+    overflow: hidden;
+    
+    font-family: sans-serif;  /* Just 'cos */
+}
+
+span.open {
+    top: 0px;
+    left: 0px;
+    width: 40px;
+    height: 40px;
+
+}
+
+.heart-shape{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(250,184,66, 0.8);
 }

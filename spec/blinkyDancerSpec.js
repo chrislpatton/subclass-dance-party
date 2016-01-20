@@ -6,7 +6,9 @@ describe("blinkyDancer", function() {
 
   beforeEach(function() {
     clock = sinon.useFakeTimers();
-    blinkyDancer = makeBlinkyDancer(10, 20, timeBetweenSteps);
+    blinkyDancer = new makeBlinkyDancer(10, 20, timeBetweenSteps);
+    fadingDancer = new makeFadingDancer(10, 20, timeBetweenSteps);
+    boozyDancer = new makeBoozyDancer(10,20, timeBetweenSteps);
   });
 
   it("should have a jQuery $node object", function(){
@@ -30,6 +32,17 @@ describe("blinkyDancer", function() {
 
       clock.tick(timeBetweenSteps);
       expect(blinkyDancer.step.callCount).to.be.equal(2);
+    });
+  });
+
+  describe('fadingDancer', function(){
+    it('should have a jQuery $node object', function(){
+      expect(fadingDancer.$node).to.be.an.instanceof(jQuery);
+    });
+  });
+  describe('boozyDancer', function(){
+    it('should have a jQuery $node object', function(){
+      expect(boozyDancer.$node).to.be.an.instanceof(jQuery);
     });
   });
 });
